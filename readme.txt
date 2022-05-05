@@ -17,9 +17,7 @@ Instantly connects and integrates the Subtext text messaging service with Paid M
 
 This plugin instantly and easily connects, and integrates, the Subtext text messaging service with Paid Memberships Pro.
 
-Users can select a membership level, complete checkout, and immediately become members of your site. You decide what content your member can access. Members can log in, view payments, update billing info, or cancel their account directly on your site.
-
-*** In order to use this plugin, you must have a [Fourth Estate](http://fourthestate.org/ "Fourth Estate") Newswire Account.  This is a paid subscription and details for obtaining these credentials can be found in the FAQ. ***
+*** In order to use this plugin, you must have a [Subtext](http://joinsubtext.com/ "Subtext") Publisher Account. ***
 
 = Member Experience Features =
 
