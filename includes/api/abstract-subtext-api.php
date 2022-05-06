@@ -24,51 +24,29 @@ abstract class Subtext_API
 
     public function get( $endpoint )
     {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $this->base_uri . $endpoint,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-            CURLOPT_HTTPHEADER => array(
-                'Authorization: Basic ' . base64_encode( $this->api_key . ':' ),
-            ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-        return json_decode( $response, true );
+        $args = array(
+            'headers' => $this->get_headers(),
+        );
+        $response = wp_remote_get( $this->base_uri . $endpoint, $args );
+        $body     = wp_remote_retrieve_body( $response );
+        return json_decode( $body, true );
     }
 
     public function post( $endpoint, $data = array() )
     {
-        $curl = curl_init();
+        $args = array(
+            'body'    => $data,
+            'headers' => $this->get_headers(),
+        );
+        $response = wp_remote_post( $this->base_uri . $endpoint, $args );
+        $body     = wp_remote_retrieve_body( $response );
+        return json_decode( $body, true );
+    }
 
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->base_uri . $endpoint,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => json_encode( $data ),
-        CURLOPT_HTTPHEADER => array(
-            'Authorization: Basic ' . base64_encode( $this->api_key . ':' ),
-            'Content-Type: application/json'
-        ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-        return json_decode( $response, true );
+    public function get_headers()
+    {
+        return array(
+            'Authorization' => 'Basic ' . base64_encode( $this->api_key . ':' )
+        );
     }
 }

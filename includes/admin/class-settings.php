@@ -107,7 +107,9 @@ if ( ! class_exists( 'FESPMP_Settings' ) ) {
 			if ( isset( $_REQUEST['allow_subtext'] ) ) {
 				$settings['activated_membership_levels'][] = $level_id;
 			} else {
-				$settings['activated_membership_levels'] = array_diff($settings['activated_membership_levels'], [$level_id]);
+                if ( isset( $settings['activated_membership_levels'] ) && count( $settings['activated_membership_levels'] ) > 0 ) {
+                    $settings['activated_membership_levels'] = array_diff($settings['activated_membership_levels'], [$level_id]);
+                }
 			}
 
 			update_option( 'fe_subtext_pmp_settings', $settings );
