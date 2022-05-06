@@ -59,14 +59,14 @@ function fe_subtext_activate( $network_wide ) {
 
         if ( $pmp_plugin_error ) {
             echo wp_kses(
-                '<h3>' . __( 'You need to install ' . $label . ' to use this plugin.', 'fe-subtext-pmp' ) . '</h3>',
+                '<h3>' . __( 'You need to install ', 'fe-subtext-pmp' ) . $label . __( ' to use this plugin.', 'fe-subtext-pmp' ) . '</h3>',
                 array(
                     'h3' => array(),
                 )
             );
 
             //Adding @ before will prevent XDebug output
-            @trigger_error(__('You need to install and activate ' . $label . ' to use this plugin.', 'fe-subtext-pmp'), E_USER_ERROR);
+            @trigger_error(__('You need to install and activate ', 'fe-subtext-pmp') . $label . __( ' to use this plugin.', 'fe-subtext-pmp'), E_USER_ERROR );
         }
     }
 }
