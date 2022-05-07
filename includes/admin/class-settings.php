@@ -54,9 +54,9 @@ if ( ! class_exists( 'FESPMP_Settings' ) ) {
 			}
 
 			$settings = array(
-				'subtext_api_key' => $_POST['subtext_api_key'],
-				'subtext_campaign_id' => $_POST['subtext_campaign_id'],
-				'activated_membership_levels' => $_POST['activated_membership_levels'],
+				'subtext_api_key' => sanitize_text_field( $_POST['subtext_api_key'] ),
+				'subtext_campaign_id' => sanitize_text_field( $_POST['subtext_campaign_id'] ),
+				'activated_membership_levels' => sanitize_text_field( $_POST['activated_membership_levels'] ),
 			);
 
 

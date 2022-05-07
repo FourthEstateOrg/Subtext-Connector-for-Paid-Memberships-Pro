@@ -64,12 +64,12 @@ if ( ! class_exists( 'FESPMP_Edit_Profile' ) ) {
 
         public function subscribe_to_subtext_by_default( $user_id )
         {
-            if ( fespmp_is_user_allowed_for_subtext( $user = get_user_by('ID', $user_id), $_POST['level'] ) ) {
+            if ( fespmp_is_user_allowed_for_subtext( $user = get_user_by( 'ID', $user_id ), sanitize_text_field( $_POST['level'] ) ) ) {
                 $subscriber = new Subtext_Subscriber( $user );
                 // Create subscriber to subtext
-                $phone = $_POST['sphone'];
-                $first_name = $_POST['first_name'];
-                $last_name = $_POST['last_name'];
+                $phone = sanitize_text_field( $_POST['sphone'] );
+                $first_name = sanitize_text_field( $_POST['first_name'] );
+                $last_name = sanitize_text_field( $_POST['last_name'] );
                 if ( empty( $phone ) ) {
                     $phone = get_user_meta( $user_id, 'pmpro_sphone', true );
                 }
@@ -114,9 +114,9 @@ if ( ! class_exists( 'FESPMP_Edit_Profile' ) ) {
                 $subscriber = new Subtext_Subscriber( $user );
                 if ( false === $subscriber->get_subtext_data() ) {
                     // Create subscriber to subtext
-                    $phone = $_POST['sphone'];
-                    $first_name = $_POST['first_name'];
-                    $last_name = $_POST['last_name'];
+                    $phone = sanitize_text_field( $_POST['sphone'] );
+                    $first_name = sanitize_text_field( $_POST['first_name'] );
+                    $last_name = sanitize_text_field( $_POST['last_name'] );
                     if ( empty( $phone ) ) {
                         $phone = get_user_meta( $user_id, 'pmpro_sphone', true );
                     }
