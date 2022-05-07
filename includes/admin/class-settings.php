@@ -19,8 +19,8 @@ if ( ! class_exists( 'FESPMP_Settings' ) ) {
             add_action( 'admin_menu', array( $this, 'add_submenu_page' ), 60 );
 			add_action( 'admin_init', array( $this, 'save_settings' ) );
 			add_action( 'admin_notices', array( $this, 'save_notice' ), 10 );
-			add_action( 'pmpro_membership_level_after_other_settings', array( $this, 'cpmps_pmpro_membership_level_after_other_settings' ), 20 );
-			add_action( "pmpro_save_membership_level", array( $this, "cpmps_pmpro_save_membership_level" ) );
+			add_action( 'pmpro_membership_level_after_other_settings', array( $this, 'pmpro_membership_level_after_other_settings' ), 20 );
+			add_action( "pmpro_save_membership_level", array( $this, "pmpro_save_membership_level" ) );
         }
 
 		/**
@@ -71,10 +71,9 @@ if ( ! class_exists( 'FESPMP_Settings' ) ) {
 		}
 
 		/**
-		 * Add checkbox to hide shipping address on some levels.
+		 * Add checkbox to enable subtext opt-in on some levels.
 		 */
-		//show the checkbox on the edit level page
-		function cpmps_pmpro_membership_level_after_other_settings() {
+		public function pmpro_membership_level_after_other_settings() {
 			$level_id = isset( $_REQUEST['edit'] ) ? intval( $_REQUEST['edit'] ) : 0;
 			if ( $level_id > 0 ) {
 				$allow_subtext = fespmp_is_level_allowed_subtext( $level_id );
@@ -99,16 +98,19 @@ if ( ! class_exists( 'FESPMP_Settings' ) ) {
 		}
 
 		/**
-		 * Save hide shipping setting when the level is saved/added
+		 * Save subtext opt-in feature setting when the level is saved/added
 		 */
-		function cpmps_pmpro_save_membership_level( $level_id ) {
+		function pmpro_save_membership_level( $level_id ) {
 			$settings = get_option( 'fe_subtext_pmp_settings' );
 
 			if ( isset( $_REQUEST['allow_subtext'] ) ) {
 				$settings['activated_membership_levels'][] = $level_id;
 			} else {
                 if ( isset( $settings['activated_membership_levels'] ) && count( $settings['activated_membership_levels'] ) > 0 ) {
-                    $settings['activated_membership_levels'] = array_diff($settings['activated_membership_levels'], [$level_id]);
+                    $settings['activated_membership_levels'] = array_diff(
+                        $settings['activated_membership_levels'], 
+                        array( $level_id ),
+                    );
                 }
 			}
 

@@ -88,36 +88,12 @@ class Subtext_For_PMP {
         require_once FE_SUBTEXT_DIR . '/includes/admin/class-settings.php';
         require_once FE_SUBTEXT_DIR . '/includes/class-edit-profile.php';
 
-        // $subscriber = new Subtext_Subscriber( wp_get_current_user() );
-        // // $subscribers = $external_subscribers->get_external_subcriber_by_id( '68f84258-859b-4540-84aa-1c76ed43fcf6' );
-        // var_dump( $subscriber->get_subtext_data() ); exit;
-        // $subscriber = $subtext_api->get_external_subcriber_by_id( '68f84258-859b-4540-84aa-1c76ed43fcf6' );
-        // var_dump( $subscriber ); exit;
-        // $subscriber = $subtext_api->create_external_subscriber( array(
-        //     'phone_number' => '+19029055337',
-        //     'external_id' => '222',
-        //     'first_name' => 'From API',
-        //     'last_name' => 'Lastname',
-        //     'email' => 'fromapi@gmail.com',
-        // ) );
-        // var_dump( $subscriber ); exit;
-        // $subscriber = $subtext_api->unsubscribe( '85825cfc-d3fa-4859-a7c5-db15d20748dc' );
-        // var_dump( $subscriber ); exit;
-        // $subscriber = $subtext_api->resubscribe( '85825cfc-d3fa-4859-a7c5-db15d20748dc' );
-        // var_dump( $subscriber ); exit;
-
         $this->register_hooks();
     }
 
     public function register_hooks()
     {
         add_filter( 'fespmp_settings', array( $this, 'get_plugin_settings' ), 0 );
-        // add_action( 'init', function() {
-        //     var_dump( wp_get_current_user()->membership_level->ID ); exit;
-        //     $subscriber = new Subtext_Subscriber( wp_get_current_user() );
-        //     // $subscribers = $external_subscribers->get_external_subcriber_by_id( '68f84258-859b-4540-84aa-1c76ed43fcf6' );
-        //     var_dump( $subscriber->get_subtext_data() ); exit;
-        // });
     }
 
     public function get_plugin_settings()
