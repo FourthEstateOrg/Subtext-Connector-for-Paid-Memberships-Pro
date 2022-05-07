@@ -49,7 +49,7 @@
 						<label for="subtext_api_key"><?php esc_attr_e( 'Subtext API Key', 'fe-subtext-pmp' ); ?></label>
 					</th>
 					<td>
-						<input type="text" name="subtext_api_key" id="subtext_api_key" value="<?php echo $settings['subtext_api_key']; ?>"/>
+						<input type="text" name="subtext_api_key" id="subtext_api_key" value="<?php echo esc_attr( $settings['subtext_api_key'] ); ?>"/>
 						<p>The Subtext API uses your campaign’s secret key to authenticate requests. You can view and manage your campaign’s secret key on the Campaign tab of your Subtext Campaign Dashboard. <br><a class="popup-trigger" data-target="#subtext-api-key">Where to find this?</a></p>
 					</td>
 				</tr>
@@ -58,7 +58,7 @@
 					<label for="subtext_campaign_id"><?php esc_attr_e( 'Campaign ID', 'fe-subtext-pmp' ); ?></label>
 					</th>
 					<td>
-						<input type="text" name="subtext_campaign_id" id="subtext_campaign_id" value="<?php echo $settings['subtext_campaign_id']; ?>"/>
+						<input type="text" name="subtext_campaign_id" id="subtext_campaign_id" value="<?php echo esc_attr( $settings['subtext_campaign_id'] ); ?>"/>
 						<p>The Subtext id of the Campaign resource. <br><a class="popup-trigger" data-target="#subtext-campaign-id">Where to find this?</a></p>
 					</td>
 				</tr>
@@ -71,8 +71,8 @@
 	<div class="popup">
 		<div class="popup-content">
 			<a class="close">&times;</a>
-			<img id="subtext-api-key" src="<?php echo FE_SUBTEXT_URL . '/assets/img/subtext-api-key.jpg' ?>" alt="api key">
-			<img id="subtext-campaign-id" src="<?php echo FE_SUBTEXT_URL . '/assets/img/subtext-campaign-id.jpg' ?>" alt="campaign id">
+			<img id="subtext-api-key" src="<?php echo esc_url( FE_SUBTEXT_URL . '/assets/img/subtext-api-key.jpg' ); ?>" alt="api key">
+			<img id="subtext-campaign-id" src="<?php echo esc_url( FE_SUBTEXT_URL . '/assets/img/subtext-campaign-id.jpg'); ?>" alt="campaign id">
 		</div>
 	</div>
 

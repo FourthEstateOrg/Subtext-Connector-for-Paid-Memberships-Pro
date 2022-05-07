@@ -66,7 +66,15 @@ if ( ! class_exists( 'FESPMP_Settings' ) ) {
 
 		public function save_notice() {
 			if ( isset( $_REQUEST['fe_subtext_pmp_save_settings'] ) ) {
-				echo sprintf( "<div class='updated'><p>%s</p></div>", esc_html__( 'Settings saved successfully.', 'fe-subtext-pmp') );
+                echo wp_kses(
+                    sprintf( "<div class='updated'><p>%s</p></div>", esc_html__( 'Settings saved successfully.', 'fe-subtext-pmp') ),
+                    array(
+                        'div' => array(
+                            'class' => array(),
+                        ),
+                        'p' => array(),
+                    ),
+                );
 			}
 		}
 
