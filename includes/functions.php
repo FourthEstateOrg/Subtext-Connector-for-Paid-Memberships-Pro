@@ -48,7 +48,5 @@ function fespmp_is_user_allowed_for_subtext( $current_user = false, $level = fal
 
 function fespmp_is_level_allowed_subtext( $level_id )
 {
-    $settings = fespmp_get_options();
-
     return in_array( $level_id, fespmp_get_activated_membership_levels() ) ? 1 : 0;
 }
