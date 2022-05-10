@@ -5,7 +5,7 @@ Tags: sms, text message, subtext, text messaging, pmp, paid memberships pro
 Requires at least: 5.2
 Tested up to: 5.9.3
 Requires PHP: 5.6
-Stable tag: 0.9.7
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,13 +76,18 @@ If you do not already have a Subtext publisher account you can take your first s
  == Screenshots ==
 
 == Changelog ==
+= 1.0.0 - 2022-05-10 =
+* INITIAL RELEASE: Serialize. Sanitize. Escape.  
+
 = 0.9.7 - 2022-05-01 =
-* INITIAL RELEASE: Now subscribing, un-subscribing, and allowing members to opt-in and opt-out of Subtext campaigns. (@fourthestate)
+* RELEASE CANDIDATE: Now subscribing, un-subscribing, and allowing members to opt-in and opt-out of Subtext campaigns. (@fourthestate)
 
 == Upgrade Notice ==
+= 1.0.0 =
+Approved Release
 
 = 0.9.7 =
-Initial Release
+Release Candidate
 
 == Credits ==
 Created and maintained by the [Fourth Estate®](https://www.fourthestate.org) as an official software project.
