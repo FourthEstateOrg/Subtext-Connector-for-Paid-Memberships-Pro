@@ -1,7 +1,7 @@
 === Connect Paid Memberships Pro to Subtext ===
 Contributors: FourthEstate, fourthestatetech, zildjianjaxolis
 Donate link: https://fourthestate.org/
-Tags: sms, text message, subtext, text messaging, pmp, paid memberships pro
+Tags: sms, text message, engagement, subtext, pmp, paid memberships pro
 Requires at least: 5.2
 Tested up to: 5.9.3
 Requires PHP: 5.6
@@ -77,7 +77,7 @@ If you do not already have a Subtext publisher account you can take your first s
 
 == Changelog ==
 = 1.0.0 - 2022-05-10 =
-* INITIAL RELEASE: Serialize. Sanitize. Escape.  
+* INITIAL RELEASE: Serialize. Sanitize. Escape.
 
 = 0.9.7 - 2022-05-01 =
 * RELEASE CANDIDATE: Now subscribing, un-subscribing, and allowing members to opt-in and opt-out of Subtext campaigns. (@fourthestate)
