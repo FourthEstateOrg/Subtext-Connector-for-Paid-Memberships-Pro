@@ -1,5 +1,5 @@
 === Connect Paid Memberships Pro to Subtext ===
-Contributors: FourthEstate, fourthestatetech, zildjianjaxolis
+Contributors: FourthEstate, fourthestatetech, oliszildjianjax
 Donate link: https://fourthestate.org/
 Tags: sms, text message, engagement, subtext, pmp, paid memberships pro
 Requires at least: 5.2
