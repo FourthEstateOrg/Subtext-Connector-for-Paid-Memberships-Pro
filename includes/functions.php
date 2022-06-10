@@ -23,7 +23,7 @@ function fespmp_get_options() {
 function fespmp_get_activated_membership_levels() {
     $settings = fespmp_get_options();
     
-    if ( ! isset( $settings['activated_membership_levels'] ) || null === $settings['activated_membership_levels'] ) {
+    if ( ! isset( $settings['activated_membership_levels'] ) || null === $settings['activated_membership_levels'] || !is_array($settings['activated_membership_levels']) ) {
         return array();
     }
 
