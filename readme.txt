@@ -5,7 +5,7 @@ Tags: sms, text message, engagement, subtext, pmp, paid memberships pro
 Requires at least: 5.2
 Tested up to: 5.9.3
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ If you do not already have a Subtext publisher account you can take your first s
  == Screenshots ==
 
 == Changelog ==
+= 1.0.1 - 2022-06-13 =
+* BUGFIX RELEASE: Fixed small bug.
+
 = 1.0.0 - 2022-05-10 =
 * INITIAL RELEASE: Serialize. Sanitize. Escape.
 
@@ -83,6 +86,10 @@ If you do not already have a Subtext publisher account you can take your first s
 * RELEASE CANDIDATE: Now subscribing, un-subscribing, and allowing members to opt-in and opt-out of Subtext campaigns. (@fourthestate)
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+BUG: Small bug fix
+
 = 1.0.0 =
 Approved Release
 
