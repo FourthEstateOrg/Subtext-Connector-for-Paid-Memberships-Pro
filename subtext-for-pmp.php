@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Connect Paid Memberships Pro to Subtext
  * Description: Instantly connects the Subtext text messaging service with Paid Memberships Pro.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Fourth Estate
  * Author URI: https://www.fourthestate.org
  * Text Domain: fe-subtext-pmp
